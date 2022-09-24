@@ -35,10 +35,11 @@ const renderCountries = (data) => {
          } = data[0];
 
     console.log(Object.values(languages));
-    console.log(Object.values());
+    console.log(Object.values(currencies)[0].name);
+    console.log(Object.values(currencies)[0].symbol);
 
     countryDiv.innerHTML += `
-    <div class="card" style="width: 18rem;">
+    <div class="card mx-auto m-3 shadow-lg" style="width: 18rem;">
         <img src="${svg}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${common}</h5>
@@ -47,7 +48,8 @@ const renderCountries = (data) => {
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><i class="fas fa-lg fa-landmark"></i> ${capital}</li>
             <li class="list-group-item"><i class="fa-solid fa-comments"></i> ${Object.values(languages)}</li>
-            <li class="list-group-item"><i class="fas fa-lg fa-money-bill-wave"></i> ${}</li>
+            <li class="list-group-item"><i class="fas fa-lg fa-money-bill-wave"></i> ${Object.values(currencies)[0].name}, 
+            ${Object.values(currencies)[0].symbol}</li>
         </ul>
     </div>
     `
@@ -55,4 +57,6 @@ const renderCountries = (data) => {
 
 fetchCountryByName("turkey");
 fetchCountryByName("South Africa");
+
+
 
